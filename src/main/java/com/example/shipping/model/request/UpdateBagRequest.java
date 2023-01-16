@@ -7,7 +7,6 @@ import lombok.Setter;
 @Setter
 public class UpdateBagRequest {
 
-    private Long id;
-
     private String barcode;
+
 }

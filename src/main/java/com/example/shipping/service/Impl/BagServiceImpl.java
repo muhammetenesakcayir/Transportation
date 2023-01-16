@@ -1,17 +1,18 @@
-package com.example.shipping.service;
+package com.example.shipping.service.Impl;
 
 import com.example.shipping.entity.Bag;
 import com.example.shipping.model.request.CreateBagRequest;
 import com.example.shipping.model.request.UpdateBagRequest;
 import com.example.shipping.model.response.CreateBagResponse;
 import com.example.shipping.repository.BagRepository;
+import com.example.shipping.service.BagService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class BagServiceImpl implements BagService{
+public class BagServiceImpl implements BagService {
 
     private final BagRepository bagRepository;
 
@@ -29,7 +30,7 @@ public class BagServiceImpl implements BagService{
 
     @Override
     public CreateBagResponse updateBag(UpdateBagRequest updateBagRequest){
-        Bag bag = bagRepository.findById(updateBagRequest.getId()).orElseThrow(RuntimeException::new);
+        Bag bag = bagRepository.findBagByBarcode(updateBagRequest.getBarcode());
         bag.setBarcode(updateBagRequest.getBarcode());
         bagRepository.save(bag);
         return new CreateBagResponse(bag.getId(), bag.getBarcode());

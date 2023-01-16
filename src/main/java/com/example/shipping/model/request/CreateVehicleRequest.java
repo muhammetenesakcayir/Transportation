@@ -5,8 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateBagRequest {
+public class CreateVehicleRequest {
 
-    private String barcode;
-
+    private String numberPlate;
 }

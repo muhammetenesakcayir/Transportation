@@ -19,7 +19,7 @@ public class BagController {
     }
 
     @PostMapping("/createBag")
-    public CreateBagResponse bagCreate(@RequestBody CreateBagRequest createBagRequest){
+    public CreateBagResponse createBag(@RequestBody CreateBagRequest createBagRequest){
         return bagService.createBag(createBagRequest);
     }
 

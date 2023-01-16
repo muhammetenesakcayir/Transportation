@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-public class Package {
+public class Packet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

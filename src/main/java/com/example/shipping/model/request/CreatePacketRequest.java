@@ -5,8 +5,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateBagRequest {
+public class CreatePacketRequest {
 
     private String barcode;
+    private Integer volumetricWeight;
 
 }
