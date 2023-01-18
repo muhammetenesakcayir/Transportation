@@ -20,4 +20,9 @@ public class Packet {
 
     @Column
     private Integer volumetricWeight;
+
+    private Integer DeliveryPoint;
+
+    @Column
+    private String Delivery;
 }

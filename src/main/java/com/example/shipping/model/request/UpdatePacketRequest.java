@@ -5,10 +5,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UpdateBagRequest {
-
-    private Long id;
+public class UpdatePacketRequest {
 
     private String barcode;
+
+    private String updateBarcode;
 
 }

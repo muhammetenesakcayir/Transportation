@@ -30,7 +30,7 @@ public class BagServiceImpl implements BagService {
 
     @Override
     public CreateBagResponse updateBag(UpdateBagRequest updateBagRequest){
-        Bag bag = bagRepository.findBagByBarcode(updateBagRequest.getBarcode());
+        Bag bag = bagRepository.findById(updateBagRequest.getId()).orElseThrow(RuntimeException::new);
         bag.setBarcode(updateBagRequest.getBarcode());
         bagRepository.save(bag);
         return new CreateBagResponse(bag.getId(), bag.getBarcode());
