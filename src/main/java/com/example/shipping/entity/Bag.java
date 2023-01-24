@@ -18,4 +18,16 @@ public class Bag {
     @Column(unique = true, nullable = false)
     private String barcode;
 
+    @Column
+    private Integer deliveryPoint;
+
+    @Column
+    private Integer status;
+
+    @Column
+    private String createDate;
+
+    @Column
+    private String updateDate;
+
 }

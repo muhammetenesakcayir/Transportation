@@ -10,5 +10,6 @@ public class CreatePacketRequest {
     private String barcode;
     private Integer volumetricWeight;
     private Integer deliveryPoint;
+    private String status;
 
 }

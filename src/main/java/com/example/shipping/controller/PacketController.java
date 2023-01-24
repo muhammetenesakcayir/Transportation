@@ -1,7 +1,6 @@
 package com.example.shipping.controller;
 
 import com.example.shipping.model.request.CreatePacketRequest;
-import com.example.shipping.model.request.UpdateBagRequest;
 import com.example.shipping.model.request.UpdatePacketRequest;
 import com.example.shipping.model.response.CreatePacketResponse;
 import com.example.shipping.service.PacketService;

@@ -1,9 +1,11 @@
 package com.example.shipping.entity;
 
+import com.example.shipping.enums.DeliveryPointStatus;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -15,14 +17,22 @@ public class Packet {
     @Column
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String barcode;
 
     @Column
     private Integer volumetricWeight;
 
-    private Integer DeliveryPoint;
+    @Column
+    private String deliveryPoint;
 
     @Column
-    private String Delivery;
+    private String status;
+
+    @Column
+    private Date createDate;
+
+    @Column
+    private Date updateDate;
+
 }

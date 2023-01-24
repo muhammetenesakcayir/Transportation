@@ -8,7 +8,9 @@ import com.example.shipping.repository.BagRepository;
 import com.example.shipping.service.BagService;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -24,6 +26,9 @@ public class BagServiceImpl implements BagService {
     public CreateBagResponse createBag(CreateBagRequest createBagRequest) {
         Bag bag = new Bag();
         bag.setBarcode(createBagRequest.getBarcode());
+        Date date = new Date();
+        String dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(date);
+        bag.setCreateDate(dateFormat);
         bagRepository.save(bag);
         return new CreateBagResponse(bag.getId(),bag.getBarcode());
     }
@@ -32,6 +37,9 @@ public class BagServiceImpl implements BagService {
     public CreateBagResponse updateBag(UpdateBagRequest updateBagRequest){
         Bag bag = bagRepository.findById(updateBagRequest.getId()).orElseThrow(RuntimeException::new);
         bag.setBarcode(updateBagRequest.getBarcode());
+        Date date = new Date();
+        String dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(date);
+        bag.setUpdateDate(dateFormat);
         bagRepository.save(bag);
         return new CreateBagResponse(bag.getId(), bag.getBarcode());
     }
